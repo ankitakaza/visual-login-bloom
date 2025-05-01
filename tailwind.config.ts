@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Georgia', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
 			colors: {
 				border: 'hsl(var(--border))',
@@ -68,10 +69,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				university: {
-					purple: '#663399',
+					purple: '#6C63FF',
 					gold: '#FFD700',
-					blue: '#0077cc',
-					lightblue: '#3498db',
+					blue: '#4F46E5',
+					lightblue: '#818CF8',
 				}
 			},
 			borderRadius: {
@@ -99,16 +100,27 @@ export default {
 				fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        wave: {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-25%)' },
+          '100%': { transform: 'translateX(0)' },
         }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fadeIn 0.5s ease-in-out forwards'
+				'fade-in': 'fadeIn 0.5s ease-in-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'wave': 'wave 15s ease-in-out infinite',
 			},
 			backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'university-gradient': 'linear-gradient(135deg, #663399 0%, #3498db 100%)',
+        'university-gradient': 'linear-gradient(135deg, #6C63FF 0%, #4F46E5 100%)',
       }
 		}
 	},

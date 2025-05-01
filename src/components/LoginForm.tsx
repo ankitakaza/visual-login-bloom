@@ -35,21 +35,26 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-md university-card animate-fade-in">
+    <Card className="w-full max-w-md university-card fade-in-element">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold text-center text-gray-800">Login</CardTitle>
+        <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-university-blue to-university-purple flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7v-2zm3-3h4v2h-4V8zm0 6h4v2h-4v-2z"/>
+          </svg>
+        </div>
+        <CardTitle className="text-2xl font-bold text-center text-gray-800 font-poppins">Welcome Back!</CardTitle>
         <CardDescription className="text-center text-gray-600">
-          Enter your credentials to access your account
+          Sign in to your account to continue
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleLogin} className="space-y-4">
-          <div className="space-y-2">
+          <div className="space-y-2 fade-in-delay-1">
             <label htmlFor="userType" className="text-sm font-medium text-gray-700">
               Login as:
             </label>
             <Select value={userType} onValueChange={setUserType}>
-              <SelectTrigger id="userType" className="w-full">
+              <SelectTrigger id="userType" className="w-full bg-white form-input-animated">
                 <SelectValue placeholder="Select user type" />
               </SelectTrigger>
               <SelectContent>
@@ -61,7 +66,7 @@ const LoginForm: React.FC = () => {
             </Select>
           </div>
           
-          <div className="space-y-2">
+          <div className="space-y-2 fade-in-delay-1">
             <label htmlFor="username" className="text-sm font-medium text-gray-700">
               Username:
             </label>
@@ -70,11 +75,11 @@ const LoginForm: React.FC = () => {
               placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="university-form-input"
+              className="university-form-input bg-white form-input-animated"
             />
           </div>
           
-          <div className="space-y-2">
+          <div className="space-y-2 fade-in-delay-2">
             <label htmlFor="password" className="text-sm font-medium text-gray-700">
               Password:
             </label>
@@ -85,7 +90,7 @@ const LoginForm: React.FC = () => {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="university-form-input pr-10"
+                className="university-form-input pr-10 bg-white form-input-animated"
               />
               <button
                 type="button"
@@ -99,16 +104,16 @@ const LoginForm: React.FC = () => {
           
           <Button 
             type="submit" 
-            className="w-full bg-university-blue hover:bg-university-lightblue"
+            className="w-full bg-gradient-to-r from-university-purple to-university-blue hover:from-university-blue hover:to-university-purple text-white font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] fade-in-delay-2 mt-6"
           >
-            <LogIn className="mr-2 h-4 w-4" /> Login
+            <LogIn className="mr-2 h-4 w-4" /> Sign In
           </Button>
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
         <div className="text-sm text-center text-gray-600">
           Don't have an account? 
-          <a href="/signup" className="ml-1 text-university-blue hover:underline">
+          <a href="/signup" className="ml-1 text-university-blue hover:underline font-medium">
             Sign up
           </a>
         </div>

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,6 +72,83 @@
   }
   
   .university-card {
-    @apply bg-white rounded-xl shadow-lg p-6 sm:p-10 border border-gray-100;
+    @apply bg-white/90 rounded-xl shadow-xl p-6 sm:p-10 border border-gray-100 backdrop-blur-sm;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .login-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(237,240,255,0.8) 100%);
+  }
+  
+  .animated-background {
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    50% {
+      transform: translatey(-10px);
+      box-shadow: 0 25px 30px rgba(0,0,0,0.1);
+    }
+    100% {
+      transform: translatey(0px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-element {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .fade-in-delay-1 {
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .fade-in-delay-2 {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .form-input-animated {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .form-input-animated:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
   }
 }
